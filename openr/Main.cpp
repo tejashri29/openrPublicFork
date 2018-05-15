@@ -340,7 +340,7 @@ main(int argc, char** argv) {
   // LOG_NODELAY => Connect immediately
   setlogmask(LOG_UPTO(LOG_INFO));
   openlog("openr", LOG_CONS | LOG_PID | LOG_NDELAY | LOG_PERROR, LOG_LOCAL4);
-  syslog(LOG_NOTICE, "Starting OpenR daemon.");
+  syslog(LOG_NOTICE, "Starting OpenR daemon....hi from public openr and changes.");
 
   // Log build information
   BuildInfo::log(std::cout);
@@ -430,7 +430,7 @@ main(int argc, char** argv) {
 
     // Spawn a watchdog thread
     allThreads.emplace_back(std::thread([&watchdog]() noexcept {
-      LOG(INFO) << "Starting Watchdog thread ...";
+      LOG(INFO) << "Starting Watchdog thread ...hi 12324";
       folly::setThreadName("Watchdog");
       watchdog->run();
       LOG(INFO) << "Watchdog thread got stopped.";
